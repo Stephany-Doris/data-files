@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+head
+	title= 'Node.js Template'
+	style
+		include main.css
+script.
+	function addUser() {
+		window.location.href = '/user'
+	}
+body
+	script(src='./app.js')
+
+	div(class="App")
+		nav
+			button(onclick="addUser()") New User
+		h1 #{users}
+		div(class="content")
+
+		h1 JSON Data Files
+		section(class="section section-light")
+			div(class="users")
+				each val in data
+					div(class="card-wrapper") 
+						h3 First Name:
+						span #{val.first_name}   
+						h3 Last Name:
+						span #{val.last_name}   
+						h3 Gender:
+						span #{val.gender}   
+						h3 Email:
+						span #{val.email}   
+						button(class="update" onclick="onDelete()") 
+							img(src="../public/delete.svg" alt="delete")  
+
+						button(class="update" )
+							img(src="../public/edit.svg" alt="edit")
+		include csv-users.pug

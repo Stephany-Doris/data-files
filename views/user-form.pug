@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+head
+title= 'Node.js Template'
+style
+    include main.css
+script.
+    function onCancel() {
+        window.location.href = '/'
+    }
+    function onSubmit(e) {
+        e.preventDefault()
+        window.location.href = '/'
+    }
+body
+    form(onSubmit={onSubmit} autoComplete="true")
+        div 
+            label(htmlFor="first_name") First Name:
+            input(type="text" id="first_name" name="first_name" placeholder="First Name")
+
+
+        div 
+            label(htmlFor="last_name") Last Name:
+            input( type="text" id="last_name" placeholder="Last Name")
+
+
+        div 
+            label(htmlFor="email") Email:
+            input(type="email" id="email" placeholder="Email")
+
+
+        div(class="gender") 
+            label(htmlFor="male") Male:
+            input(type="checkbox" id="male" checked name="male")
+
+            label(htmlFor="female") Female:
+            input(type="checkbox" id="female" checked=false name="female")
+
+
+        div(class="form-action")
+            button(type="button" class="cancel" onclick="onCancel()") Cancel          
+
+            button(type="submit" onclick="onSubmit()") Submit
+

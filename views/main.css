@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  color: black;
+  font-family: "Roboto Slab", serif;
+  background-color: bisque;
+}
+
+.App {
+  text-align: center;
+  margin: 0 10rem 5rem;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: auto;
+  color: black;
+  margin-bottom: 4rem;
+}
+
+nav {
+  text-align: right;
+  padding-top: 1rem;
+}
+
+h1 {
+  text-decoration: overline;
+  margin: 4rem 0 2rem;
+}
+
+h3 {
+  margin: 0 0 2rem;
+  font-weight: 600;
+}
+
+.card-wrapper {
+  border: 2px solid #545658;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: justify;
+  padding: 12px;
+}
+
+.users {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+}
+
+button {
+  height: 40px;
+  padding: 0 12px;
+  min-width: 150px;
+  font: inherit;
+  background-color: transparent;
+  border: 1px solid #545658;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update {
+  margin-top: 1rem;
+  min-width: 0;
+}
+
+.update :first-of-type {
+  margin-right: 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  margin: 10rem auto 0;
+  border: 2px solid #545658;
+  width: 600px;
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+form div {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+}
+
+form input {
+  height: 34px;
+  background: transparent;
+  border: 1px solid #545658;
+  border-radius: 4px;
+  padding: 1px 8px;
+}
+
+.gender {
+  grid-template-columns: 30% 20% 30% 20%;
+  width: 200px;
+  margin: auto;
+}
+.gender input {
+  width: 20px;
+}
+
+.form-action {
+  grid-template-columns: auto auto;
+  justify-content: end;
+  column-gap: 1rem;
+}
+
+.cancel {
+  background-color: transparent;
+  border-color: #545658;
+}
+
+form button {
+  width: 150px;
+  margin: 1rem auto 0;
+  background-color: #68bdff;
+}

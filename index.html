@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="main.css" rel="stylesheet" />
+    <title>JS data-files</title>
+  </head>
+  <body>
+    <div class="App">
+      <nav>
+        <button>New User</button>
+      </nav>
+      <div class="content"></div>
+
+      <h1>JSON Data Files</h1>
+      <section class="section section-light">
+        <div class="users">
+          <div class="card-wrapper">
+            <h3>First Name:</h3>
+            <span><%= user.name %>
+              {data?.first_name}</span>
+            <h3>Last Name:</h3>
+            <span>{data?.last_name}</span>
+            <h3>Gender:</h3>
+            <span>{data?.gender}</span>
+            <h3>Email:</h3>
+            <span>{data?.email}</span>
+            <button class="update" onclick="onDelete()">
+              <img src="public/delete.svg" alt="delete" />
+            </button>
+            <button class="update">
+              <img src="public/edit.svg" alt="edit" />
+            </button>
+          </div>
+
+          <div class="card-wrapper">
+            <h3>First Name:</h3>
+            <span>{data?.first_name}</span>
+            <h3>Last Name:</h3>
+            <span>{data?.last_name}</span>
+            <h3>Gender:</h3>
+            <span>{data?.gender}</span>
+            <h3>Email:</h3>
+            <span>{data?.email}</span>
+            <button class="update" onclick="onDelete()">
+              <img src="public/delete.svg" alt="delete" />
+            </button>
+            <button class="update">
+              <img src="public/edit.svg" alt="edit" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <h1>CSV Data Files</h1>
+      <section class="section section-light">
+        <div class="users">
+          <div class="card-wrapper">
+            <h3>First Name:</h3>
+            <span>{data?.first_name}</span>
+            <h3>Last Name:</h3>
+            <span>{data?.last_name}</span>
+            <h3>Gender:</h3>
+            <span>{data?.gender}</span>
+            <h3>Email:</h3>
+            <span>{data?.email}</span>
+            <button class="update" onclick="onDelete()">
+              <img src="public/delete.svg" alt="delete" />
+            </button>
+            <button class="update">
+              <img src="public/edit.svg" alt="edit" />
+            </button>
+          </div>
+
+          <div class="card-wrapper">
+            <h3>First Name:</h3>
+            <span>{data?.first_name}</span>
+            <h3>Last Name:</h3>
+            <span>{data?.last_name}</span>
+            <h3>Gender:</h3>
+            <span>{data?.gender}</span>
+            <h3>Email:</h3>
+            <span>{data?.email}</span>
+            <button class="update" onclick="onDelete()">
+              <img src="public/delete.svg" alt="delete" />
+            </button>
+            <button class="update">
+              <img src="public/edit.svg" alt="edit" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <h1>XML Data Files</h1>
+      <section class="section section-light">
+        <div class="users">
+          <div class="card-wrapper">
+            <h3>First Name:</h3>
+            <span>{data?.first_name}</span>
+            <h3>Last Name:</h3>
+            <span>{data?.last_name}</span>
+            <h3>Gender:</h3>
+            <span>{data?.gender}</span>
+            <h3>Email:</h3>
+            <span>{data?.email}</span>
+            <button class="update" onclick="onDelete()">
+              <img src="public/delete.svg" alt="delete" />
+            </button>
+            <button class="update">
+              <img src="public/edit.svg" alt="edit" />
+            </button>
+          </div>
+
+          <div class="card-wrapper">
+            <h3>First Name:</h3>
+            <span>{data?.first_name}</span>
+            <h3>Last Name:</h3>
+            <span>{data?.last_name}</span>
+            <h3>Gender:</h3>
+            <span>{data?.gender}</span>
+            <h3>Email:</h3>
+            <span>{data?.email}</span>
+            <button class="update" onclick="onDelete()">
+              <img src="public/delete.svg" alt="delete" />
+            </button>
+            <button class="update">
+              <img src="public/edit.svg" alt="edit" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <h1>SQL Data Files</h1>
+      <section class="section section-light">
+        <div class="card-wrapper">
+          <h3>First Name:</h3>
+          <span>{data?.first_name}</span>
+          <h3>Last Name:</h3>
+          <span>{data?.last_name}</span>
+          <h3>Gender:</h3>
+          <span>{data?.gender}</span>
+          <h3>Email:</h3>
+          <span>{data?.email}</span>
+          <button class="update" onclick="onDelete()">
+            <img src="public/delete.svg" alt="delete" />
+          </button>
+          <button class="update">
+            <img src="public/edit.svg" alt="edit" />
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function onDelete() {
+        console.log("delete this");
+      }
+
+      function getJSONUsers () {
+        fs.readFile(
+    "/mock-data/json-users.json",
+    async function (err, data) {
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      // res.write(data);
+      return res.end(await data.json());
+    }
+  );
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then(response => response.json())
+          .then(json => {
+            console.log(json);
+          });
+      }
+    </script>
+  </body>
+</html>
